@@ -1,5 +1,7 @@
+DROP TYPE IF EXISTS state;
+DROP TYPE IF EXISTS direction;
 CREATE TYPE state AS ENUM ('requested', 'accepted', 'cancelled');
-CREATE TYPE direction AS ENUM ('from', 'to')
+CREATE TYPE direction AS ENUM ('from', 'to');
 
 CREATE TABLE IF NOT EXISTS users
   (
