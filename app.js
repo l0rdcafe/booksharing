@@ -1,4 +1,5 @@
 const express = require("express");
+const path = require("path");
 const morgan = require("morgan")("short");
 const session = require("express-session");
 const bodyParser = require("body-parser");
@@ -11,6 +12,7 @@ const app = express();
 
 app.use(morgan);
 app.use(bodyParser.json());
+app.use(express.static(path.join(__dirname, "client/build")));
 app.use(
   session({
     secret: process.env.SECRET,
