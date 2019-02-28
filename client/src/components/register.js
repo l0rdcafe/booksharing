@@ -49,7 +49,7 @@ class Register extends React.Component {
       const result = await res.json();
       if (res.status === 200) {
         this.props.history.push("/");
-        this.props.onLogin(result)
+        this.props.onLogin(result.user)
       } else {
         throw new Error(result.error)
       }
